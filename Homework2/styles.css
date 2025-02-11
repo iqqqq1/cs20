@@ -57,7 +57,7 @@ nav ul li a {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background-image: url('background.jpg'); /* Replace with actual image */
+    background-image: url('background.png'); 
     background-size: cover;
     background-position: center;
     display: flex;
