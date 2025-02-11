@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boba Bear - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -27,10 +30,40 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
-            <h1>We are Boba enthusiasts, driven to provide the best bubble tea beverages with all locally-sourced ingredients</h1>
+            <p>We are Boba enthusiasts, driven to provide the best bubble tea beverages with all locally-sourced ingredients</p>
             <a href="#" class="order-btn">Order Now</a>
         </div>
     </section>
 
+    <!-- Bestsellers Section -->
+    <section class="bestsellers">
+        <h2>Our Bestsellers</h2>
+        <div class="bestsellers-container">
+            <div class="bestseller-item">
+                <img src="ex1.png" alt="Thai Iced Tea">
+                <a href="#" class="bestseller-label">Thai Iced Tea</a>
+            </div>
+            <div class="bestseller-item">
+                <img src="ex3.png" alt="Brown Sugar">
+                <a href="#" class="bestseller-label">Brown Sugar</a>
+            </div>
+            <div class="bestseller-item">
+                <img src="ex2.png" alt="Matcha Tea">
+                <a href="#" class="bestseller-label">Matcha Tea</a>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        window.addEventListener("scroll", function () {
+            let header = document.querySelector("header");
+            if (window.scrollY > 1) {
+                header.classList.add("scrolled"); // Adds background & blur
+            } else {
+                header.classList.remove("scrolled"); // Keeps it transparent
+            }
+        });
+    </script>
 </body>
 </html>
