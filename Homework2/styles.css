@@ -341,7 +341,7 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .footer-top {
         flex-direction: column;
-        gap: 15px;
+        gap: 0px;
     }
 }
 
