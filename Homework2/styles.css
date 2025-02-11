@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     margin: 0;
-    font-family: 'Newsreader', serif; /* Use Newsreader font */
+    font-family: 'Newsreader', serif; 
     color: #333;
     padding-bottom: 30px;
 }
@@ -16,14 +16,14 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background: transparent; /* Fully transparent at first */
-    z-index: 1000; /* Ensure it stays on top */
+    background: transparent; 
+    z-index: 1000; 
 }
 
 /* When scrolled, background changes */
 header.scrolled {
-    background: rgba(255, 255, 255, 0.1); /* Subtle white transparency */
-    backdrop-filter: blur(20px); /* Apply blur effect */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(20px); 
 }
 
 /* Logo */
@@ -37,7 +37,7 @@ header.scrolled {
 
 .buttontop {
     display: flex;
-    justify-content: center; /* Center the button */
+    justify-content: center; 
     align-items: center;
     margin-bottom: 20px ;
     margin-right: 100px;
@@ -84,7 +84,7 @@ nav ul li a:hover {
     border-radius: 10px;
     transition: background 0.3s ease;
     display: inline-block;
-    margin-left: auto; /* Pushes button to the left */
+    margin-left: auto; 
 }
 
 
@@ -129,8 +129,8 @@ nav ul li a:hover {
     justify-content: center;
     text-align: center;
     background: url('background.jpg') no-repeat center center;
-    background-size: cover; /* Crops the image to fit horizontally */
-    background-position: center; /* Ensures it remains centered */
+    background-size: cover; 
+    background-position: center; 
 }
 
 /* Hero Text */
@@ -160,13 +160,13 @@ nav ul li a:hover {
 .bestsellers {
     text-align: center;
     padding: 80px 20px;
-    background-color: #fff; /* Match background with design */
+    background-color: #fff; 
 }
 
 .bestsellers h2 {
     font-size: 2.5rem;
     font-weight: 300;
-    color: #c47f7f; /* Soft brown-pink color */
+    color: #c47f7f; 
     margin-bottom: 40px;
 }
 
@@ -175,14 +175,14 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap; /* Ensures responsiveness */
+    flex-wrap: wrap; 
 }
 
 /* Bestseller Items */
 .bestseller-item {
     position: relative;
     width: 300px;
-    height: 400px; /* Set a fixed height for uniformity */
+    height: 400px; 
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -190,14 +190,14 @@ nav ul li a:hover {
 }
 
 .bestseller-item:hover {
-    transform: scale(1.05); /* Subtle hover effect */
+    transform: scale(1.05); 
 }
 
 /* Bestseller Images */
 .bestseller-item img {
     width: 100%;
-    height: 100%; /* Ensures full coverage */
-    object-fit: cover; /* Crops to fit container while maintaining aspect ratio */
+    height: 100%; 
+    object-fit: cover; 
     border-radius: 20px;
     display: block;
 }
@@ -220,7 +220,7 @@ nav ul li a:hover {
 
 /* Button Hover Effect */
 .bestseller-label:hover {
-    background: rgba(255, 220, 200, 1); /* Slightly darker on hover */
+    background: rgba(255, 220, 200, 1); 
     transform: translateX(-50%) scale(1.1);
 }
 
@@ -247,8 +247,8 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     padding: 80px 20px;
-    background-color: #fdf8f6; /* Light pinkish background */
-    gap: 50px; /* Space between text and image */
+    background-color: #fdf8f6; 
+    gap: 50px; 
 }
 
 .order-content {
@@ -282,11 +282,11 @@ nav ul li a:hover {
 
 /* Image Styling */
 .order-image img {
-    width: 500px; /* Adjust width */
+    width: 500px; 
     height: auto;
 }
 
-/* Responsive Design */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .order-section {
         flex-direction: column;
@@ -300,7 +300,7 @@ nav ul li a:hover {
     }
 
     .order-image img {
-        width: 200px; /* Smaller for mobile */
+        width: 200px; 
     }
 }
 
@@ -310,11 +310,11 @@ nav ul li a:hover {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #FFB6C1; /* Dark brown background */
+    background-color: #FFB6C1; 
     color: white;
     text-align: center;
     padding: 20px 0;
-    z-index: 1000; /* Ensure it stays on top */
+    z-index: 1000; 
 }
 
 /* Top Navigation Links */
@@ -337,7 +337,7 @@ nav ul li a:hover {
     color: rgba(0, 0, 0, 0.7); ;
 }
 
-/* Responsive Design */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .footer-top {
         flex-direction: column;
@@ -422,7 +422,7 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .signup-container {
         flex-direction: column;
@@ -707,7 +707,7 @@ nav ul li a {
     color: rgba(0, 0, 0, 0.7);
 }
 
-/* Responsive Design */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .executive-container {
         flex-direction: column;
