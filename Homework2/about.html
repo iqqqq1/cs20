@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Boba Bear</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Boba Bear Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="founders.html">Founders</a></li>
+                <li><a href="signup.html">Rewards and Membership</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="buttontop">
+            <a href="#" class="order-btn">Order Now</a>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <h1>About Boba Bear</h1>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At BobaBear, we believe that every sip should bring joy, warmth, and a little bit of magic to your day. Born from a passion for creativity and quality, our mission is to offer more than just a drink – we’re serving moments of happiness in a cup. With a blend of traditional techniques and a sprinkle of fun, each cup of BobaBear bubble tea is made with love, using only the finest ingredients and the freshest fruits.</p>
+                    <p>Founded in the heart of New York City in 2015, BobaBear has quickly become a beloved brand, with over 100 locations across the country. We’re not just about great tea – we’re about creating experiences that make you smile, share laughter, and make memories with friends and family.</p>
+                    <p>Our dream? To bring the world together, one delicious bubble at a time, and to inspire everyone to embrace their playful side while savoring the perfect bubble tea. Whether you’re in the mood for a classic milk tea or an adventurous fruity creation, BobaBear is here to make your day a little sweeter and a lot more fun.</p>
+                    <p>In 2019, we launched National Boba Day, a celebration of all things boba, to honor the global community of bubble tea lovers who live and breathe the joy of every chewy bite and refreshing sip.</p>
+                    <p>At BobaBear, we’re not just making tea – we’re creating smiles, one bubble at a time.</p>
+                </div>
+                <div class="about-image-container">
+                    <img src="boba-bear-image.jpg" alt="BobaBear Tea" class="about-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-top">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="founders.html">Founders</a>
+            <a href="signup.html">Rewards and Membership</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="#">Order Now</a>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            let header = document.querySelector("header");
+            if (window.scrollY > 1) {
+                header.classList.add("scrolled"); // Adds background & blur
+            } else {
+                header.classList.remove("scrolled"); // Keeps it transparent
+            }
+        });
+    </script>
+    
+</body>
+</html>
