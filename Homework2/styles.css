@@ -426,6 +426,7 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .signup-section {
         padding-top: 280px;
+        padding-bottom: 180px;
     }
 
     .signup-container {
