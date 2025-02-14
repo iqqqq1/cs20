@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS20 JavaScript Worksheet</title>
+</head>
+<body>
+    <h1>CS20 JavaScript Worksheet</h1>
+    <button onclick="runProblems()">Pick a Problem</button>
+
+    <script>
+        function problem1() {
+            let output = "Counting down: ";
+            for (let i = 40; i >= 10; i -= 2) {
+                output += i + " ";
+            }
+            console.log(output);
+            alert(output);
+        }
+
+        function problem2() {
+            let sum = 0;
+            while (sum <= 20) {
+                let num = parseInt(prompt("Enter a number:"));
+                if (!isNaN(num)) {
+                    sum += num;
+                }
+            }
+            alert("Sum exceeded 20!");
+        }
+
+        function problem3() {
+            let sum = 0;
+            let numbers = [];
+            while (sum <= 20) {
+                let num = parseInt(prompt("Enter a number:"));
+                if (!isNaN(num)) {
+                    sum += num;
+                    numbers.push(num);
+                }
+            }
+            alert("Numbers entered: " + numbers.join(", "));
+        }
+
+        function problem4() {
+            var songs = {
+                "Love Is Gone": "SLANDER",
+                "First Time": "SLANDER",
+                "Superhuman": "SLANDER",
+                "Back to U": "SLANDER",
+                "Potions": "SLANDER",
+
+                "Clarity": "Zedd",
+                "Starlight": "Martin Garrix",
+                "Good Things Fall Apart": "Illenium",
+                "Hallow": "Dabin",
+                "Spaceman": "Hardwell",
+            };
+
+            let output = "Songs and Artists:\n";
+            for (let song in songs) {
+                output += `"${song}" by ${songs[song]}\n`;
+            }
+            console.log(output);
+            alert(output);
+        }
+
+        function problem5() {
+            var songs = {
+                "Love Is Gone": "SLANDER",
+                "First Time": "SLANDER",
+                "Superhuman": "SLANDER",
+                "Back to U": "SLANDER",
+                "Potions": "SLANDER",
+
+                "Clarity": "Zedd",
+                "Stay The Night": "Zedd",
+                "Spectrum": "Zedd",
+
+                "Animals": "Martin Garrix",
+                "Scared to Be Lonely": "Martin Garrix",
+                "In the Name of Love": "Martin Garrix",
+
+                "Good Things Fall Apart": "Illenium",
+                "Takeaway": "Illenium",
+                "Crawl Outta Love": "Illenium",
+
+                "Holding On": "Dabin",
+                "Alive": "Dabin",
+                "Rings & Roses": "Dabin",
+
+                "Spaceman": "Hardwell",
+                "Apollo": "Hardwell",
+                "Never Say Goodbye": "Hardwell",
+            };
+
+            var band = prompt("Enter a band/artist name:");
+            var output = `Songs by ${band}:\n`;
+
+            for (var song in songs) {
+                if (songs[song].toLowerCase() === band.toLowerCase()) {
+                    output += `"${song}"\n`;
+                }
+            }
+
+            if (output === `Songs by ${band}:\n`) {
+                output = "No songs found for this band/artist.";
+            }
+
+            console.log(output);
+            alert(output);
+        }
+
+        function runProblems() {
+            let problems = [problem1, problem2, problem3, problem4, problem5];
+            let problemNum = parseInt(prompt("Enter a problem number (1-5):"));
+            if (!isNaN(problemNum) && problemNum >= 1 && problemNum <= 5) {
+                problems[problemNum - 1]();
+            } else {
+                alert("Invalid problem number.");
+            }
+        }
+    </script>
+</body>
+</html>
