@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe's Hotdogs Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffcc99;
+            text-align: center;
+        }
+        h1 {
+            color: #b22222;
+        }
+        .menu {
+            background-color: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .order-button {
+            background-color: #b22222;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .order-button:hover {
+            background-color: #8b0000;
+        }
+        #orderSummary {
+            background-color: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function showMoney(amount) {
+            return Math.round(amount * 100) / 100;
+        }
+
+        function takeOrder() {
+            const HOTDOG_PRICE = 4.99;
+            const FRIES_PRICE = 3.99;
+            const SODA_PRICE = 1.79;
+            const TAX_RATE = 0.0625;
+            const DISCOUNT_THRESHOLD = 30;
+            const DISCOUNT_RATE = 0.10;
+
+            let numDogs = parseInt(prompt("How many hotdogs would you like?")) || 0;
+            let numFries = parseInt(prompt("How many fries would you like?")) || 0;
+            let numSoda = parseInt(prompt("How many sodas would you like?")) || 0;
+
+            let subtotal = (numDogs * HOTDOG_PRICE) + (numFries * FRIES_PRICE) + (numSoda * SODA_PRICE);
+            let discount = (subtotal >= DISCOUNT_THRESHOLD) ? subtotal * DISCOUNT_RATE : 0;
+            let subtotalAfterDiscount = subtotal - discount;
+            let tax = subtotalAfterDiscount * TAX_RATE;
+            let total = subtotalAfterDiscount + tax;
+
+            let orderSummary = document.getElementById("orderSummary");
+            orderSummary.innerHTML = `
+                <h2>Order Summary</h2>
+                <p>Hotdogs: ${numDogs} x $${HOTDOG_PRICE} = $${showMoney(numDogs * HOTDOG_PRICE)}</p>
+                <p>Fries: ${numFries} x $${FRIES_PRICE} = $${showMoney(numFries * FRIES_PRICE)}</p>
+                <p>Sodas: ${numSoda} x $${SODA_PRICE} = $${showMoney(numSoda * SODA_PRICE)}</p>
+                <p>Subtotal: $${showMoney(subtotal)}</p>
+                <p>Discount: -$${showMoney(discount)}</p>
+                <p>Subtotal after Discount: $${showMoney(subtotalAfterDiscount)}</p>
+                <p>Tax: $${showMoney(tax)}</p>
+                <h3>Total: $${showMoney(total)}</h3>
+            `;
+            orderSummary.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to Joe's Hotdog Stand</h1>
+    <div class="menu">
+        <p><strong>Hotdog:</strong> $4.99 each</p>
+        <p><strong>Fries:</strong> $3.99 each</p>
+        <p><strong>Soda:</strong> $1.79 each</p>
+    </div>
+    <br>
+    <button class="order-button" onclick="takeOrder()">Order</button>
+    <div id="orderSummary"></div>
+</body>
+</html>
