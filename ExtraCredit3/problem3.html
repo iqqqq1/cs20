@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #slideshow {
+            width: 400px;
+            height: 300px;
+            margin: 20px auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            position: absolute;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
+
+    <h2>Image Slideshow</h2>
+    <div id="slideshow">
+        <img id="slideshowImage" src="images/image1.jpg" alt="Slideshow Image">
+    </div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+    <script>
+        $(document).ready(function () {
+            let images = [
+                "images/image1.jpg",
+                "images/image2.jpg",
+                "images/image3.jpg",
+                "images/image4.webp",
+                "images/image5.jpg"
+            ];
+            let index = 0;
+            let interval;
+            
+            function startSlideshow() {
+                interval = setInterval(function () {
+                    $("#slideshowImage").fadeOut(1000, function () {
+                        index = (index + 1) % images.length;
+                        $(this).attr("src", images[index]).fadeIn(1000);
+                    });
+                }, 2500);
+            }
+            
+            function stopSlideshow() {
+                clearInterval(interval);
+            }
+            
+            $("#start").click(startSlideshow);
+            $("#stop").click(stopSlideshow);
+        });
+    </script>
+</body>
+</html>

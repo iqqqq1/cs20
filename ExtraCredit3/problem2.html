@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Toggle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin: 5px;
+            font-size: 18px;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
+
+    <h2>Checkbox Toggle</h2>
+    <div class="checkbox-container">
+        <label><input type="checkbox" id="checkAll" onclick="toggleCheckboxes()"> Check All</label>
+        <label><input type="checkbox" class="optionCheckbox" onclick="updateCheckAll()"> Option 1</label>
+        <label><input type="checkbox" class="optionCheckbox" onclick="updateCheckAll()"> Option 2</label>
+        <label><input type="checkbox" class="optionCheckbox" onclick="updateCheckAll()"> Option 3</label>
+        <label><input type="checkbox" class="optionCheckbox" onclick="updateCheckAll()"> Option 4</label>
+    </div>
+    
+    <script>
+        function toggleCheckboxes() {
+            let checkAll = document.getElementById("checkAll");
+            let checkboxes = document.querySelectorAll(".optionCheckbox");
+            
+            checkboxes.forEach(cb => cb.checked = checkAll.checked);
+            checkAll.nextSibling.textContent = checkAll.checked ? " Uncheck All" : " Check All";
+        }
+        
+        function updateCheckAll() {
+            let checkAll = document.getElementById("checkAll");
+            let checkboxes = document.querySelectorAll(".optionCheckbox");
+            
+            checkAll.checked = [...checkboxes].every(cb => cb.checked);
+            checkAll.nextSibling.textContent = checkAll.checked ? " Uncheck All" : " Check All";
+        }
+    </script>
+</body>
+</html>

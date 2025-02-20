@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 150px;
+            padding: 5px;
+            margin: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
+    
+    <h2>Jump Text Between Boxes</h2>
+    <input type="text" id="leftBox" placeholder="Enter text here">
+    <button id="jumpButton" onclick="jumpText()">JUMP ></button>
+    <input type="text" id="rightBox" placeholder="Enter text here">
+    
+    <script>
+        function jumpText() {
+            let leftBox = document.getElementById("leftBox");
+            let rightBox = document.getElementById("rightBox");
+            let button = document.getElementById("jumpButton");
+            
+            let temp = leftBox.value;
+            leftBox.value = rightBox.value;
+            rightBox.value = temp;
+            
+            if (button.textContent === "JUMP >") {
+                button.textContent = "< JUMP";
+            } else {
+                button.textContent = "JUMP >";
+            }
+        }
+    </script>
+</body>
+</html>
