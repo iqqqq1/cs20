@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="products.css"?>
+<products>
+    <product>
+        <name>iPhone</name>
+        <description>Latest model with advanced camera and high-speed performance</description>
+        <price>$999</price>
+        <categories>
+            <category>electronics</category>
+            <category>smartphones</category>
+        </categories>
+    </product>
+    <product>
+        <name>MacBook</name>
+        <description>Lightweight and powerful laptop with Retina display</description>
+        <price>$1299</price>
+        <categories>
+            <category>electronics</category>
+            <category>laptops</category>
+        </categories>
+    </product>
+    <product>
+        <name>AirPods</name>
+        <description>Wireless earbuds with noise cancellation</description>
+        <price>$199</price>
+        <categories>
+            <category>electronics</category>
+            <category>accessories</category>
+        </categories>
+    </product>
+    <product>
+        <name>Backpack</name>
+        <description>Stylish and durable backpack with multiple compartments</description>
+        <price>$80</price>
+        <categories>
+            <category>accessories</category>
+            <category>outdoors</category>
+        </categories>
+    </product>
+    <product>
+        <name>Keychain</name>
+        <description>Premium metal keychain with a sleek design</description>
+        <price>$15</price>
+        <categories>
+            <category>accessories</category>
+        </categories>
+    </product>
+    <product>
+        <name>Rolex Watch</name>
+        <description>Luxury Swiss-made automatic watch</description>
+        <price>$10,000</price>
+        <categories>
+            <category>accessories</category>
+            <category>luxury</category>
+        </categories>
+    </product>
+    <product>
+        <name>Shorts</name>
+        <description>Comfortable cotton shorts for casual wear</description>
+        <price>$40</price>
+        <categories>
+            <category>clothing</category>
+        </categories>
+    </product>
+    <product>
+        <name>Shoes</name>
+        <description>Running shoes with breathable fabric and cushioned sole</description>
+        <price>$120</price>
+        <categories>
+            <category>clothing</category>
+            <category>sports</category>
+        </categories>
+    </product>
+    <product>
+        <name>Wallet</name>
+        <description>Leather wallet with multiple card slots</description>
+        <price>$50</price>
+        <categories>
+            <category>accessories</category>
+        </categories>
+    </product>
+</products>
