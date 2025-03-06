@@ -81,21 +81,17 @@
         $(document).ready(function () {
             var products = [];
 
-            // Load JSON data
             $.get("products.json", function (data) {
                 products = data;
 
-                // Extract unique categories from products
                 let categories = new Set();
                 data.forEach(product => product.categories.forEach(cat => categories.add(cat)));
 
-                // Populate the dropdown with categories
                 categories.forEach(category => {
                     $("#categorySelect").append(`<option value="${category}">${category}</option>`);
                 });
             });
 
-            // Filter products based on selected category
             $("#filterButton").click(function () {
                 var selectedCategory = $("#categorySelect").val();
                 var output = "";
