@@ -1,0 +1,56 @@
+[
+    {
+        "name": "iPhone",
+        "description": "Latest model with advanced camera and high-speed performance",
+        "price": "$999",
+        "categories": ["electronics", "smartphones"]
+    },
+    {
+        "name": "MacBook",
+        "description": "Lightweight and powerful laptop with Retina display",
+        "price": "$1299",
+        "categories": ["electronics", "laptops"]
+    },
+    {
+        "name": "AirPods",
+        "description": "Wireless earbuds with noise cancellation",
+        "price": "$199",
+        "categories": ["electronics", "accessories"]
+    },
+    {
+        "name": "Backpack",
+        "description": "Stylish and durable backpack with multiple compartments",
+        "price": "$80",
+        "categories": ["accessories", "outdoors"]
+    },
+    {
+        "name": "Keychain",
+        "description": "Premium metal keychain with a sleek design",
+        "price": "$15",
+        "categories": ["accessories"]
+    },
+    {
+        "name": "Rolex Watch",
+        "description": "Luxury Swiss-made automatic watch",
+        "price": "$10,000",
+        "categories": ["accessories", "luxury"]
+    },
+    {
+        "name": "Shorts",
+        "description": "Comfortable cotton shorts for casual wear",
+        "price": "$40",
+        "categories": ["clothing"]
+    },
+    {
+        "name": "Shoes",
+        "description": "Running shoes with breathable fabric and cushioned sole",
+        "price": "$120",
+        "categories": ["clothing", "sports"]
+    },
+    {
+        "name": "Wallet",
+        "description": "Leather wallet with multiple card slots",
+        "price": "$50",
+        "categories": ["accessories"]
+    }
+]

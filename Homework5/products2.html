@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List (JSON Display)</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+        }
+        .product h3 {
+            margin: 0;
+            color: #333;
+        }
+        .product p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .categories {
+            font-size: 14px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Product List</h2>
+    <button id="loadData">Load Products</button>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("#loadData").click(function () {
+                $.get("products.json", function (data) {
+                    var output = "";
+                    
+                    data.forEach(function (product) {
+                        output += `
+                            <div class="product">
+                                <h3>${product.name}</h3>
+                                <p>${product.description}</p>
+                                <p><strong>Price:</strong> ${product.price}</p>
+                                <p class="categories"><strong>Categories:</strong> ${product.categories.join(", ")}</p>
+                            </div>
+                        `;
+                    });
+
+                    $("#result").html(output);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
