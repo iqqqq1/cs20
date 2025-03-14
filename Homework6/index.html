@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fun - Pokemon Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #pokemonImage {
+            max-width: 200px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .info-box {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pokemon Information</h1>
+    <p>Enter a Pokemon name or ID to get information.</p>
+    <input type="text" id="pokemonName" placeholder="Enter Pokemon name or ID">
+    <button onclick="fetchPokemon()">Get Pokemon</button>
+    <br>
+    <img id="pokemonImage" src="" alt="Pokemon Image" style="display:none;">
+    <div id="pokemonInfo" class="info-box" style="display:none;"></div>
+    
+    <div class="info-box">
+        <h2>About the API</h2>
+        <p><strong>Selected API:</strong> PokeAPI</p>
+        <p><strong>Why this API?</strong> It provides extensive Pokemon data, including names, images, stats, and abilities. I really like Pokemon and have played the games and collected cards since I was a kid so I when I saw this API I was very interested.</p>
+        <p><strong>API Source:</strong> <a href="https://pokeapi.co/" target="_blank">PokeAPI</a></p>
+        <p><strong>API Parameters:</strong> I used a GET request to <code>https://pokeapi.co/api/v2/pokemon/{name_or_id}</code>, where the user provides a Pokemon name or ID.</p>
+        <p><strong>Use Case:</strong> This API is useful for game developers of Pokemons games, fans who want to fetch Pokemon details, and Pokemon trainers :D.</p>
+    </div>
+
+    <script>
+        function fetchPokemon() {
+            const nameOrId = document.getElementById("pokemonName").value.toLowerCase();
+            const apiUrl = `https://pokeapi.co/api/v2/pokemon/${nameOrId}`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Pokemon not found");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const img = document.getElementById("pokemonImage");
+                    img.src = data.sprites.front_default;
+                    img.style.display = "block";
+
+                    const infoBox = document.getElementById("pokemonInfo");
+                    infoBox.innerHTML = `<h3>${data.name.toUpperCase()}</h3>
+                                        <p><strong>ID:</strong> ${data.id}</p>
+                                        <p><strong>Type:</strong> ${data.types.map(t => t.type.name).join(", ")}</p>
+                                        <p><strong>Base Experience:</strong> ${data.base_experience}</p>`;
+                    infoBox.style.display = "block";
+                })
+                .catch(error => {
+                    alert(error.message);
+                });
+        }
+    </script>
+</body>
+</html>
